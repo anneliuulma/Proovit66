@@ -1,0 +1,58 @@
+<html>
+<body>
+#if ( $error.isError()== true )
+	<b><font color=red>$error.getMessage()</font></b>
+	<br>
+	<br>
+#end
+<b>$date</b>
+<br>
+<br>
+<table border="1">
+<tr>
+<th>Ticker</th>
+<th>Name</th>
+<th>Isin</th>
+<th>Currency</th>
+<th>Marketplace</th>
+<th>Listname</th>
+<th>AveragePrice</th>
+<th>Open price</th>
+<th>High price</th>
+<th>Low price</th>
+<th>Last close price</th>
+<th>Last price</th>
+<th>Price change %</th>
+<th>Best bid</th>
+<th>Best ask</th>
+<th>Trades</th>
+<th>Volume</th>
+<th>Turnover</th>
+</tr>
+#foreach ($stock in $stockInformationList)
+<tr>
+<td>$stock.getTicker()</td>
+<td>$stock.getName()</td>
+<td>$stock.getIsin()</td>
+<td>$stock.getCurrency()</td>
+<td>$stock.getMarketplace()</td>
+<td>$stock.getListname()</td>
+<td>$stock.getAveragePrice()</td>
+<td>$stock.getOpenPrice()</td>
+<td>$stock.getHighPrice()</td>
+<td>$stock.getLowPrice()</td>
+<td>$stock.getLastClosePrice()</td>
+<td>$stock.getLastPrice()</td>
+<td>$stock.getPriceChangePercentage() %</td>
+<td>$stock.getBestBid()</td>
+<td>$stock.getBestAsk()</td>
+<td>$stock.getTrades()</td>
+<td>$stock.getVolume()</td>
+<td>$stock.getTurnover()</td>
+</tr>        
+#end
+</table>
+<br>
+<a href="index.jsp">Menu</a>
+</body>
+</html>

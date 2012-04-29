@@ -1,0 +1,18 @@
+<html>
+<body>
+#if ( $error.isError()== true )
+	<b><font color=red>$error.getMessage()</font></b>
+	<br>
+	<br>
+#end
+<b>Select date</b>
+<br>
+<br>
+#foreach ($d in $dateList)
+	           <a href="stockInformation.html?date=$d"> $d </a>
+	            <br/>
+#end
+<br>
+<a href="index.jsp">Menu</a>
+</body>
+</html>

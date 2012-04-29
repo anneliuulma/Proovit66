@@ -1,0 +1,46 @@
+<html>
+<body>
+#if ( $error.isError()== true )
+	<b><font color=red>$error.getMessage()</font></b>
+	<br>
+	<br>
+#end
+<b>Most traded stock search</b>
+<br>
+<br>
+<form method="POST" action="mostTradedStocks.html">
+Insert date period:<br>
+	       <input type="text" size="10" name="date1" value="$date1" /> - <input type="text" size="10" name="date2" value="$date2" />
+	       <input type="submit" value="Search"/>
+</form>
+#if ( $stockInformationList.size() == 0 &&  $error.isError()== false && $date1 != "")
+No stocks found!
+#end
+<table border="1">
+#if ( $stockInformationList.size() != 0 )
+<tr>
+<th>Trades per period</th>
+<th>Ticker</th>
+<th>Name</th>
+<th>Isin</th>
+<th>Currency</th>
+<th>Marketplace</th>
+<th>Listname</th>
+</tr>
+#end
+#foreach ($stock in $stockInformationList)
+<tr>
+<td>$stock.getPeriodSumTrades()</td>
+<td>$stock.getTicker()</td>
+<td>$stock.getName()</td>
+<td>$stock.getIsin()</td>
+<td>$stock.getCurrency()</td>
+<td>$stock.getMarketplace()</td>
+<td>$stock.getListname()</td>
+</tr>        
+#end
+</table>
+<br>
+<a href="index.jsp">Menu</a>
+</body>
+</html>
