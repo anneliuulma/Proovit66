@@ -21,6 +21,7 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 	     <property name="cache" value="true"/>
 	     <property name="prefix" value=""/>
 	     <property name="suffix" value=".vm"/>
+	     <property name="contentType" value="text/html; charset=UTF-8" />
 	</bean>
 	
 </beans>
